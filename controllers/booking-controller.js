@@ -1,7 +1,14 @@
 import { booking } from "../models/booking-model.js";
 
-export const getAllBookings = (req, res) => {
-    res.status(200).json('These are all bookings');
+
+export const getAllBookings = async (req, res) => {
+    try {
+        const AllBookings = await booking.find(); // fetch all bookings from database
+
+        res.status(200).json(AllBookings);
+    } catch (error) {
+        res.status(500).json({message:'Error fetching bookings', error});
+    }
 }
 
 export const getOneBooking = (req, res) => {
