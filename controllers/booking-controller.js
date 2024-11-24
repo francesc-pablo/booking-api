@@ -11,9 +11,11 @@ export const getAllBookings = async (req, res) => {
     }
 }
 
+
 export const getOneBooking = (req, res) => {
     res.status(200).json('This is your booking');
 }
+
 
 export const addBooking = async (req, res, next) => {
     try {
@@ -27,9 +29,11 @@ export const addBooking = async (req, res, next) => {
     }
 }
 
+
 export const updateBooking = (req, res) => {
     res.status(200).json('Booking Updated');
 }
+
 
 export const deleteBooking = (req, res) => {
     res.status(200).json('Booking deleted');
